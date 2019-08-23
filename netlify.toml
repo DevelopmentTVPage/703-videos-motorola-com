@@ -1,0 +1,4 @@
+[build]
+base = ""
+publish = "public"
+command = "hugo --baseURL=https://S57468_priorities_cleanup--videos-motorola-com.netlify.com/us/ --destination=public/us && node rename.js"

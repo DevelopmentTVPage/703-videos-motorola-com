@@ -1,0 +1,31 @@
+{{- $loginId := $.Site.Params.loginId -}}
+{{- $chanelId := .Params.channelid -}}
+{{- $channelUrl := printf "https://api.tvpage.com/v1/channels/%s?X-login-id=%s" $chanelId $loginId -}}
+{{- $channel := getJSON $channelUrl -}}
+{{- $.Scratch.Add "channel" $channel -}}
+{{- $.Scratch.Set "channelVideos" slice -}}
+{{ $fetchUrl := printf "https://api.tvpage.com/v1/channels/%s/videos?p=0&n=40&X-login-id=%s&status=approved" $chanelId $loginId -}}
+{{- $channelData := getJSON $fetchUrl -}}
+{{- if $channelData -}}
+  {{- range $channelData -}}
+    {{- $fullVideo := . -}}
+    {{- $.Scratch.Add "channelVideos" $fullVideo -}}
+  {{- end -}}
+{{- end -}}
+
+{{ $1stvid := index ($.Scratch.Get "channelVideos") 0 }}
+
+{{- partial (printf "%s/dochead.html" .Type) . -}}
+{{- partial (printf "%s/header.html" .Type) . -}}
+{{- partial (printf "%s/main_channel.html" .Type) . -}}
+
+<script type="text/javascript">
+	TVSite = window.TVSite || {};
+    TVSite.channelTitle = {{ .Title }};
+    TVSite.channelVideosData = {{ $channel | jsonify | safeJS }};
+    TVSite.channelVideosData.videos = {{ $.Scratch.Get "channelVideos" }};
+    TVSite.channelVideosData.video = {{ $1stvid }};
+</script>
+
+{{- partial (printf "%s/scripts.html" .Type) . -}}
+{{- partial (printf "%s/footer.html" .Type) . -}}

@@ -1,0 +1,48 @@
+{{- if or (eq .Layout "channel") (eq .Layout "home") (eq .Layout "index") -}}
+	{{- $.Scratch.Set "titlePage" "" -}}
+	{{- if isset .Params "title" -}}
+		{{- $.Scratch.Set "titlePage" .Params.title -}}
+	{{- else -}}
+		{{- $.Scratch.Set "titlePage" .Title -}}
+	{{- end -}}
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "WebPage",
+		"name": "{{ $.Scratch.Get "titlePage" }}",
+		"description": "{{- $.Scratch.Get "siteDescription" | default .Summary -}}",
+		"PotentialAction": {
+		  "@type": "ViewAction",
+		  "Target": "{{- .Permalink -}}"
+		}
+	}
+	</script>
+{{- else if (eq .Layout "video") -}}
+	{{- $video := index $.Site.Data.videos (printf "x%s" .Params.videoid ) -}}
+  {{- $.Scratch.Set "dateUploaded" 0 -}}
+  {{- if gt (int $video.asset.uploadDate) 0 -}}
+    {{- $.Scratch.Set "dateUploaded" (int $video.asset.uploadDate) -}}
+  {{ else if gt (int $video.date_created) 0 }}
+    {{- $.Scratch.Set "dateUploaded" (int $video.date_created) -}}
+	{{- end -}}
+	{{- $date := time ($.Scratch.Get "dateUploaded") -}}
+	{{- $.Scratch.Set "videoThumbnail" $video.asset.thumbnailUrl -}}
+	{{- if not (in $video.asset.thumbnailUrl "http") -}}
+		{{- $.Scratch.Set "videoThumbnail" (printf "https:%s" $video.asset.thumbnailUrl) -}}
+	{{- end -}}
+	<script type="application/ld+json">
+	{
+	    "@context": "http://schema.org",
+	    "@type": "VideoObject",
+	    "name": "{{$video.title}}",
+	    "description": "{{$video.description}}",
+	    "thumbnailUrl": "{{$.Scratch.Get "videoThumbnail"}}",
+      "uploadDate": "{{ time $date.Unix }}",
+	    "duration": "{{$video.duration}}",
+	    "PotentialAction": {
+	        "@type" : "ViewAction",
+	        "Target" : "{{- .Permalink -}}"
+	    }
+	}
+	</script>
+{{- end -}}

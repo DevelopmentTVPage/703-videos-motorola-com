@@ -1,0 +1,14 @@
+
+{{ partial (printf "%s/dochead.html" .Type) . }}
+{{ partial (printf "%s/header.html" .Type) . }}
+{{ partial (printf "%s/main_video.html" .Type) . }}
+{{ $photo := index $.Site.Data.photos (printf "x%s" .Params.photoId ) }}
+<script type='text/javascript'>
+  TVSite = window.TVSite || {};
+  TVSite.channelVideosData = {};
+  {{- with $photo -}}
+  TVSite.channelVideosData.video = {{ . | jsonify | safeJS }};
+  {{- end -}}
+</script>
+{{ partial (printf "%s/scripts.html" .Type) . }}
+{{ partial (printf "%s/footer.html" .Type) . }}

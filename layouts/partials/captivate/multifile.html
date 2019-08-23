@@ -1,0 +1,34 @@
+{{- if eq .Layout "home" -}}
+    <script type="text/javascript">
+        TVSite.channelVideosData = [];
+        TVSite.channelsGallery = [];
+        TVSite.channelVideosData.videos = [];
+    </script>
+    {{- if (getenv "HUGO_DEBUG") -}}
+        <script async type="text/javascript" src="{{ relURL "dist/home.js" }}"></script>
+    {{- else -}}
+        <script async type="text/javascript" src="{{ relURL "dist/home.min.js" }}"></script>
+    {{- end -}}
+{{- else if eq .Layout "channel" -}}
+    {{- if (getenv "HUGO_DEBUG") -}}
+        <script async type="text/javascript" src="{{ relURL "dist/channel.js" }}"></script>
+    {{- else -}}
+        <script async type="text/javascript" src="{{ relURL "dist/channel.min.js" }}"></script>
+    {{- end -}}
+{{- else if or (eq .Layout "video") (eq .Layout "photo") -}}
+    {{- if (getenv "HUGO_DEBUG") -}}
+        <script async type="text/javascript" src="{{ relURL "dist/video.js" }}"></script>
+    {{- else -}}
+        <script async type="text/javascript" src="{{ relURL "dist/video.min.js" }}"></script>
+    {{- end -}}
+{{- else if eq .Layout "search" -}}
+    {{- if (getenv "HUGO_DEBUG") -}}
+        <script async type="text/javascript" src="{{ relURL "dist/search.js" }}"></script>
+    {{- else -}}
+        <script async type="text/javascript" src="{{ relURL "dist/search.min.js" }}"></script>
+    {{- end -}}
+{{- end -}}
+
+{{- if or (eq .Layout "video") (eq .Layout "photo") (eq .Layout "channel") -}}
+    <script async type="text/javascript" src="//cdnjs.tvpage.com/tvplayer/tvp-master.min.js"></script>
+{{- end -}}

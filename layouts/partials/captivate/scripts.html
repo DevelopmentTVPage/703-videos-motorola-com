@@ -1,0 +1,68 @@
+{{- $baseUrl := .Site.BaseURL -}}
+{{- range $element := .Site.Params.tvppages -}}
+    {{ if eq $element.code "featuredcategoriesids"  }}
+        {{ $.Scratch.Add "featuredcategoriesids" $element.value }}
+    {{ end }}
+{{- end -}}
+
+{{- $featuredCategoriesIds := (split ($.Scratch.Get "settings").featuredcategoriesids ",") -}}
+
+<script type="application/javascript">
+    TVSite = window.TVSite || {};
+    var apiVersion = {{ getenv "HUGO_API_URL" }};
+    TVSite.loginId = {{ .Site.Params.loginId }};
+    TVSite.apiUrl = apiVersion || "https:\\/\\/stage.tvpage.com/api/";
+    TVSite.baseUrl = {{- $baseUrl -}};
+    //checking page type
+    var locatedIn = {{- .Layout -}};
+    TVSite.isHomePage = locatedIn === "home" ? true : false;
+    TVSite.isChannelPage = locatedIn === "channel" ? true : false;
+    TVSite.isPlayerPage = locatedIn === "channelVideo" ? true : false;
+    TVSite.isSearchPage = locatedIn === "search" ? true : false;
+    TVSite.isVideoPage = locatedIn === "video" ? true : false;
+    TVSite.channelId = {{ .Params.channelid }};
+    if(TVSite.isHomePage){
+        TVSite.channelId = {{ ($.Scratch.Get "settings").homechannelid }};
+    }
+    TVSite.channelInfo = {{ ($.Scratch.Get "settings").channelData }} || {};
+    TVSite.channelIds = '{{ $.Scratch.Get "channelIds" }}';
+    TVSite.featuredCategoriesIds = {{$featuredCategoriesIds}};
+    
+    (function() {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = ("https:" == document.location.protocol ? "https" : "http") + "://a.tvpage.com/tvpa.min.js";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+    var _tvpa = _tvpa || [];
+    var analyticsConfig = {
+        "li": TVSite.loginId,
+        "logUrl": "\/\/api.tvpage.com\/v1\/__tvpa.gif"
+    };
+
+    {{- if and (isset $.Site.Params "firstpartycookies") (isset $.Site.Params "cookiedomain") -}}
+        analyticsConfig.firstPartyCookieDomain = {{- $.Site.Params.cookiedomain -}};
+    {{- end -}}
+
+    _tvpa.push(["config", analyticsConfig]);
+    _tvpa.push(["track", "ci", { li: TVSite.loginId }]);
+</script>
+
+<script type="application/javascript">
+  var loadDeferredStyles = function() {
+    var addStylesNode = document.querySelectorAll(".deferred-styles");
+    for (var i = 0; i < addStylesNode.length; i++) {
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode[i].textContent;
+        addStylesNode[i].parentElement.removeChild(addStylesNode[i]);
+        document.body.appendChild(replacement);
+    }
+  };
+  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>

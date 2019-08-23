@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{{- range $i, $def := (getJSON (printf "themes/tvpage/defaults/%s.json" .Type)).option -}}
+    {{- $.Scratch.SetInMap "settings" .code .value -}}
+{{ end }}
+
+{{- range $i, $param := .Params -}}
+    {{- $.Scratch.SetInMap "settings" $i . -}}
+{{- end -}}
+
+{{- if isset .Site.Params "tvppages" -}}
+    {{- range (.Param "tvppages") -}}
+        {{- $.Scratch.SetInMap "settings" .code .value -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $.Scratch.Set "siteDescription" .Params.description -}}
+{{- $.Scratch.Set "siteTitle" (printf "%s - %s" .Title .Site.Title ) -}}
+
+{{- if eq .Layout "index" -}}
+    {{- $.Scratch.Set "siteTitle" .Site.Title -}}
+{{- end -}}
+
+{{- $baseUrl := .Site.BaseURL -}}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {{- partial (printf "%s/single-meta.html" .Type) . -}}
+    <style type="text/css">
+        *[class^=tvp-] {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        div:focus {
+            outline: none;
+        }
+
+        body {
+            padding-top: 0 !important;
+        }
+
+        .tvp-seo {
+            display: none;
+        }
+
+        a:active, a:hover {
+            text-decoration: none !important;
+        }
+
+        .tvp-hide {
+            display: none !important;
+        }
+
+        .main-content.site-wrapper {
+            overflow: initial !important;
+            min-height: 100vh;
+        }
+
+        .main-content.not-found-page {
+            min-height: 50vh !important;
+        }
+
+        .main-content.not-found-page .motobox {
+            margin-top: 145px !important;
+        }
+
+        .navbar-header {
+            height: 95px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .navbar-header .logo.logo-custom {
+            height: 100px !important;
+            max-height: 100px !important;
+            margin: 10px 15px 0 0 !important;
+        }
+
+        .footer {
+            z-index: 2;
+        }
+        .region-dark-footer section.motorola-footer-change-location>ul>li:first-child:before{
+            background-image: none !important;
+        }
+
+        @media only screen and (min-width: 992px) {
+            .navbar-header {
+                border-bottom: none !important;
+                height: 55px !important;
+            }
+
+            .footer {
+                z-index: 3;
+            }
+
+            body {
+                padding-top: 85px !important;
+            }
+
+            .navbar-header .logo.logo-custom {
+                height: 55px !important;
+                max-height: 55px !important;
+                margin: 0 15px 0 0 !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet"
+          href="//www.motorola.com/sites/default/files/advagg_css/css__yqLphvAg6-mJcdy5r7SqAt6dQt5wOVDcc_zjN4qiD4k__UQzp39V09tEHOui2Njd5vadmiGAIpBcfbHgwL68figc__O5NUfM45soExWcBgRR2mDoIEPtiG2PZzU2OCll3La48.css">
+
+
+    {{- if (getenv "HUGO_DEBUG") -}}
+
+    {{- else -}}
+    <!-- Google Tag Manager -->
+
+    <script type="application/javascript">
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-NFRM');
+    </script>
+
+    <!-- End Google Tag Manager -->
+    {{- end -}}
+</head>

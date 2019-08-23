@@ -1,0 +1,168 @@
+#tvpageplayer-container{
+  z-index: auto;
+}
+
+.tvp-player-products-container{
+  padding-top: 90%;
+  position: relative;
+  & > .player-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    & > .row {
+      position: fixed;
+      width: 100%;
+      background-color: #fff;
+      z-index: 1;
+    }
+  }
+}
+
+.player-container #tvpageplayer-container{
+  position: relative;
+  z-index: 0;
+}
+.no-products .player-container #tvpageplayer-container{
+  padding: 0;
+}
+.TVPagePlayer-holder {
+  overflow: hidden;
+  background-color: #000000;
+  margin: 0;
+}
+.TVPagePlayer-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  outline: none;
+  margin-bottom: 10px;
+  .html5-play-button {
+    background: url('//do0631budpzeh.cloudfront.net/assets/img/profilePlayOverlay.png') no-repeat 50% 50%;
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+  }
+}
+
+#tvpageplayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  border-radius: 8px;
+  & > div {
+    border-radius: 8px;
+  }
+}
+.tvp-author{
+  color: #333333;
+  font-size: 24px;
+  line-height: 18px;
+}
+
+.tvp-published, .tvp-duration, .tvp-social{
+  font-family: "Gotham A", "Gotham B", 'ruble';
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  text-transform: capitalize;
+  font-weight: 600;
+  & span{
+    font-weight: normal;
+  }
+}
+
+.tvp-duration, .tvp-social{
+  margin-left: 64px;
+}
+
+.tvp-video-description{
+  font-family: "Gotham A", "Gotham B", 'ruble';
+  line-height: 20px;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+  text-align:left;
+}
+
+.tvplayer-playbutton, .tvp-ad-play-button{
+  opacity: 0.8;
+}
+.tvp-player-video {
+  color: #444444;
+  font-family: "Gotham A", "Gotham B", 'ruble';
+}
+.tvp-playing{
+  background-color: rgba(0,0,0,0.5) !important;
+}
+.video-title-playing{
+  margin-top: 10px;
+  font-family: "Gotham A", "Gotham B", 'ruble';
+  color: #000000;
+  opacity: 0.5;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.container.player-container .row {
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0px 5px 10px 0px #333;
+}
+
+.tvp-player-video-title{
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+  margin: 25px 15px;
+  &-text {
+    font-size: 22px;
+    color: #000;
+  }
+}
+
+.video-wrapper {
+  position: absolute !important;
+}
+
+.tvp-no-wrap {
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px){
+  .tvp-player-products-container{
+    padding-top: 75%;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .tvp-player-video-title {
+    position: absolute !important;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 20%;
+    margin: 0 15px;
+  }
+  .container.player-container .row {
+    border-radius: unset;
+    box-shadow: none;
+  }
+  .tvp-player-products-container{
+    padding-top: 0;
+    position: relative;
+    & > .player-container{
+      position: relative;
+      top: unset;
+      bottom: unset;
+      width: unset;
+      & > .row {
+        position: relative;
+        width: unset;
+      }
+    }
+  }
+}
