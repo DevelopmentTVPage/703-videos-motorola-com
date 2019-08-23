@@ -1,0 +1,47 @@
+{
+    "title": "Tv Commercials ",
+    "description": null,
+    "referenceId": null,
+    "date_created": "1555020951",
+    "date_modified": "1563503472",
+    "tags": null,
+    "sourceId": null,
+    "status": "pending",
+    "visibility": "1",
+    "id": "208654680",
+    "loginId": "1759312",
+    "entityType": "5",
+    "titleTextEncoded": "tv-commercials",
+    "category": null,
+    "duration": null,
+    "settings": {
+        "canvasImage": "default_canvas3.jpg",
+        "colorClass": "light",
+        "canvasType": "gallery",
+        "blocks": [
+            {
+                "add": "assets",
+                "conditions": {
+                    "order": "date_created",
+                    "lastNDays": "",
+                    "limit": "",
+                    "keyword": ""
+                },
+                "attributes": {
+                    "videos": {},
+                    "photos": {},
+                    "products": {}
+                },
+                "options": {},
+                "extras": {}
+            }
+        ],
+        "productBlock": {
+            "match": "all",
+            "recommended": false,
+            "attributes": {}
+        }
+    },
+    "transcripts": null,
+    "dynamicChannelParams": []
+}

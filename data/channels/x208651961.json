@@ -1,0 +1,23 @@
+{
+    "title": "Featured Video",
+    "description": "",
+    "referenceId": null,
+    "date_created": "1555005441",
+    "date_modified": "1555028143",
+    "tags": null,
+    "sourceId": null,
+    "status": "pending",
+    "visibility": "1",
+    "id": "208651961",
+    "loginId": "1759312",
+    "entityType": "3",
+    "titleTextEncoded": "test",
+    "category": null,
+    "duration": null,
+    "settings": {
+        "canvasImage": "default_canvas3.jpg",
+        "colorClass": "light",
+        "canvasType": "gallery"
+    },
+    "transcripts": null
+}

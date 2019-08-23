@@ -1,0 +1,108 @@
+{
+    "title": "The moto z³ with 5G moto mod",
+    "description": "The moto z³, with the 5G moto mod, is the world's first 5G-upgradable smartphone. 5G is coming to make your life easier, from faster downloads, to augmented reality, and so much more. Are you ready for the future?\n\nFollow us on Facebook: @MotorolaUS\nFollow us on Twitter: @MotorolaUS\nFollow us on Instagram: @MotorolaUS",
+    "referenceId": "2d60a80e532a014cdca653cd2b488ab7",
+    "date_created": "1560200133",
+    "date_modified": "1562355631",
+    "tags": "motorola,moto,moto z3,5g,verizon",
+    "sourceId": "6",
+    "status": "approved",
+    "visibility": "1",
+    "user_id": "215942",
+    "id": "214211954",
+    "loginId": "1759312",
+    "entityType": "1",
+    "titleTextEncoded": "5g-ar-1920x1080-horizontal-10sec",
+    "category": "",
+    "tvp_profiles": "",
+    "tvp_profiles_manual": "",
+    "tvp_profiles_maxscore": "",
+    "tvp_enhanced_search": "",
+    "tvp_enhanced_anti": "",
+    "tvp_enhanced_brand": "",
+    "tvp_enhanced_video_images": "",
+    "tvp_enhanced_transcript": "",
+    "VIDEO_LENGTH": "SHORT",
+    "duration": 10,
+    "settings": "",
+    "asset": {
+        "user": {
+            "firstName": "",
+            "lastName": "",
+            "emailAddress": ""
+        },
+        "videoMeta": {
+            "duration": 10,
+            "width": 1920,
+            "height": 1080
+        },
+        "mediaDuration": 10,
+        "prettyDuration": "00:00:10",
+        "selectableThumbnails": [
+            "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00005.jpg",
+            "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00004.jpg",
+            "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00003.jpg",
+            "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00002.jpg",
+            "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00001.jpg"
+        ],
+        "automaticThumbnailsPattern": "1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-{count}",
+        "thumbnails": {
+            "256": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-256-17c9196d9644a9dd24c76dd60620c49f.jpg",
+            "480": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-480-791a54932803e03bb0e588f6838c513e.jpg",
+            "640": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-640-2ac2d9bf78b7b1b0b4c5227105c76e50.jpg",
+            "1280": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-1280-e4eb47ac70e88d82f7c248980cf746a2.jpg",
+            "1920": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-1920-e306540624290025b4f16c4114a57f3c.jpg"
+        },
+        "selectedThumbnailUrl": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/thumb-2d60a80e532a014cdca653cd2b488ab7-00004.jpg",
+        "thumbnailUrl": "\/\/v.tvpage.com\/1759312\/214211954\/thumbnail\/image-thumbnail-640-2ac2d9bf78b7b1b0b4c5227105c76e50.jpg",
+        "type": "mp4",
+        "dashUrl": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/media.mpd",
+        "hlsUrl": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/media.m3u8",
+        "uploadAsset": false,
+        "quality": "",
+        "sources": [
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/1080p_media.mp4",
+                "quality": "1080p",
+                "mime": "video\/mp4",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/720p_media.mp4",
+                "quality": "720p",
+                "mime": "video\/mp4",
+                "width": 1280,
+                "height": 720
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/480p_media.mp4",
+                "quality": "480p",
+                "mime": "video\/mp4",
+                "width": 854,
+                "height": 480
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/360p_media.mp4",
+                "quality": "360p",
+                "mime": "video\/mp4",
+                "width": 640,
+                "height": 360
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/214211954\/fa5d8\/240p_media.mp4",
+                "quality": "240p",
+                "mime": "video\/mp4",
+                "width": 320,
+                "height": 180
+            }
+        ]
+    },
+    "transcripts": "",
+    "views": 20,
+    "engagement_score": "",
+    "conversion_score": "",
+    "CVV_VI": "",
+    "metrics_statistics": "",
+    "author": "Motorola"
+}

@@ -1,0 +1,49 @@
+{
+    "title": "How To's",
+    "description": null,
+    "referenceId": null,
+    "date_created": "1555020881",
+    "date_modified": "1559175312",
+    "tags": null,
+    "sourceId": null,
+    "status": "pending",
+    "visibility": "1",
+    "id": "208654516",
+    "loginId": "1759312",
+    "entityType": "5",
+    "titleTextEncoded": "how-to-s",
+    "category": null,
+    "duration": null,
+    "settings": {
+        "canvasImage": "default_canvas3.jpg",
+        "colorClass": "light",
+        "canvasType": "gallery",
+        "blocks": [
+            {
+                "add": "assets",
+                "conditions": {
+                    "order": "date_created",
+                    "lastNDays": "",
+                    "limit": "",
+                    "keyword": ""
+                },
+                "attributes": {
+                    "videos": {
+                        "status": "approved"
+                    },
+                    "photos": {},
+                    "products": {}
+                },
+                "options": {},
+                "extras": {}
+            }
+        ],
+        "productBlock": {
+            "match": "all",
+            "recommended": false,
+            "attributes": {}
+        }
+    },
+    "transcripts": null,
+    "dynamicChannelParams": []
+}

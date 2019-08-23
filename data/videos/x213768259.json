@@ -1,0 +1,109 @@
+{
+    "title": "Meet the new moto g⁷ power",
+    "description": "The new moto g⁷ power lets you live your life without worrying about battery. Get up to 3 days of power in a single charge! Take great pictures with the dual cameras and view them on the ultrawide display. This phone has everything you'll need. Unlocked for all major U.S. carriers.\n\nFollow us on Facebook: @MotorolaUS\nFollow us on Twitter: @MotorolaUS\nFollow us on Instagram: @MotorolaUS",
+    "referenceId": "96347f966eda7f0541be1a832f78d570",
+    "date_created": "1559664940",
+    "date_modified": "1562355631",
+    "tags": "moto g7 power,motorola g7 power,battery,best battery,3 days of battery,unlocked",
+    "sourceId": "6",
+    "status": "approved",
+    "visibility": "1",
+    "user_id": "215942",
+    "id": "213768259",
+    "loginId": "1759312",
+    "entityType": "1",
+    "titleTextEncoded": "moto-g7power-matters2u-horizontal-en-us-1920x1080-base-v4",
+    "category": "",
+    "tvp_profiles": "",
+    "tvp_profiles_manual": "",
+    "tvp_profiles_maxscore": "",
+    "tvp_enhanced_search": "",
+    "tvp_enhanced_anti": "",
+    "tvp_enhanced_brand": "",
+    "tvp_enhanced_video_images": "",
+    "tvp_enhanced_transcript": "",
+    "VIDEO_LENGTH": "SHORT",
+    "duration": 55,
+    "settings": "",
+    "asset": {
+        "user": {
+            "firstName": "",
+            "lastName": "",
+            "emailAddress": ""
+        },
+        "videoMeta": {
+            "duration": 55,
+            "width": 1920,
+            "height": 1080
+        },
+        "mediaDuration": 55,
+        "prettyDuration": "00:00:55",
+        "selectableThumbnails": [
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00006.jpg",
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00005.jpg",
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00004.jpg",
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00003.jpg",
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00002.jpg",
+            "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00001.jpg"
+        ],
+        "automaticThumbnailsPattern": "1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-{count}",
+        "thumbnails": {
+            "256": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-256-58bfa95d207f3c71613e6bd9d94c3a6c.jpg",
+            "480": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-480-00edba69b3ad051ef7ca5341cc8290ac.jpg",
+            "640": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-640-af754276517e3d703bfdcdda17f134c3.jpg",
+            "1280": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-1280-c97b0d6a9bd265922afb45b5e2700bea.jpg",
+            "1920": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-1920-29dd3f20b816dd658c96f9df2bacb1c7.jpg"
+        },
+        "selectedThumbnailUrl": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/thumb-96347f966eda7f0541be1a832f78d570-00005.jpg",
+        "thumbnailUrl": "\/\/v.tvpage.com\/1759312\/213768259\/thumbnail\/image-thumbnail-640-af754276517e3d703bfdcdda17f134c3.jpg",
+        "type": "mp4",
+        "dashUrl": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/media.mpd",
+        "hlsUrl": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/media.m3u8",
+        "uploadAsset": false,
+        "quality": "",
+        "sources": [
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/1080p_media.mp4",
+                "quality": "1080p",
+                "mime": "video\/mp4",
+                "width": 1920,
+                "height": 1080
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/720p_media.mp4",
+                "quality": "720p",
+                "mime": "video\/mp4",
+                "width": 1280,
+                "height": 720
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/480p_media.mp4",
+                "quality": "480p",
+                "mime": "video\/mp4",
+                "width": 854,
+                "height": 480
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/360p_media.mp4",
+                "quality": "360p",
+                "mime": "video\/mp4",
+                "width": 640,
+                "height": 360
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/213768259\/60940\/240p_media.mp4",
+                "quality": "240p",
+                "mime": "video\/mp4",
+                "width": 320,
+                "height": 180
+            }
+        ]
+    },
+    "transcripts": "",
+    "views": 19,
+    "engagement_score": "",
+    "conversion_score": "",
+    "CVV_VI": "",
+    "metrics_statistics": "",
+    "author": "Motorola"
+}
