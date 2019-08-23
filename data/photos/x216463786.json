@@ -1,0 +1,126 @@
+{
+    "title": "moto z4 unlocked",
+    "description": null,
+    "referenceId": "7568290dfbda74a6754b133febc1ea3a",
+    "date_created": "1563761088",
+    "date_modified": "1566582429",
+    "tags": null,
+    "status": "approved",
+    "visibility": "1",
+    "user_id": "215942",
+    "id": "216463786",
+    "loginId": "1759312",
+    "entityType": "7",
+    "titleTextEncoded": "moto-z4-unlocked",
+    "category": null,
+    "tvp_profiles": null,
+    "tvp_profiles_manual": null,
+    "tvp_profiles_maxscore": null,
+    "tvp_enhanced_search": null,
+    "tvp_enhanced_anti": null,
+    "tvp_enhanced_brand": null,
+    "settings": null,
+    "asset": {
+        "type": "photo",
+        "sources": [
+            {
+                "width": 1920,
+                "height": 2332,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--1920.jpeg?v=1563761089463"
+            },
+            {
+                "width": 1280,
+                "height": 1555,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--1280.jpeg?v=1563761090436"
+            },
+            {
+                "width": 1200,
+                "height": 1457,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--1200.jpeg?v=1563761090877"
+            },
+            {
+                "width": 1024,
+                "height": 1244,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--1024.jpeg?v=1563761091276"
+            },
+            {
+                "width": 1080,
+                "height": 1312,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--1080.jpeg?v=1563761091650"
+            },
+            {
+                "width": 960,
+                "height": 1166,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--960.jpeg?v=1563761091965"
+            },
+            {
+                "width": 640,
+                "height": 777,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--640.jpeg?v=1563761092207"
+            },
+            {
+                "width": 600,
+                "height": 728,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--600.jpeg?v=1563761092368"
+            },
+            {
+                "width": 256,
+                "height": 311,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-media--256.jpeg?v=1563761092491"
+            }
+        ],
+        "thumbnails": [
+            {
+                "width": 1920,
+                "height": 1080,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-1920.jpeg?v=1563761092657"
+            },
+            {
+                "width": 1280,
+                "height": 720,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-1280.jpeg?v=1563761092893"
+            },
+            {
+                "width": 640,
+                "height": 360,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-640.jpeg?v=1563761093090"
+            },
+            {
+                "width": 480,
+                "height": 270,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-480.jpeg?v=1563761093167"
+            },
+            {
+                "width": 256,
+                "height": 144,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-256.jpeg?v=1563761093259"
+            },
+            {
+                "width": 64,
+                "height": 64,
+                "format": "jpeg",
+                "url": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-64.jpeg?v=1563761093304"
+            }
+        ],
+        "thumbnailUrl": "https:\/\/s3-us-west-2.amazonaws.com\/video.tvpage.com\/1759312\/216463786\/image-thumbnail-640.jpeg?v=1563761093090"
+    },
+    "views": null,
+    "engagement_score": null,
+    "conversion_score": null,
+    "CPV_PI": null,
+    "metrics_statistics": null
+}

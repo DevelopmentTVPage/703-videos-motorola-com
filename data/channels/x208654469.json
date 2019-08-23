@@ -1,0 +1,49 @@
+{
+    "title": "Moto Events",
+    "description": null,
+    "referenceId": null,
+    "date_created": "1555020857",
+    "date_modified": "1559175245",
+    "tags": null,
+    "sourceId": null,
+    "status": "pending",
+    "visibility": "1",
+    "id": "208654469",
+    "loginId": "1759312",
+    "entityType": "5",
+    "titleTextEncoded": "moto-events",
+    "category": null,
+    "duration": null,
+    "settings": {
+        "canvasImage": "default_canvas3.jpg",
+        "colorClass": "light",
+        "canvasType": "gallery",
+        "blocks": [
+            {
+                "add": "assets",
+                "conditions": {
+                    "order": "relation:4c:conversion_score",
+                    "lastNDays": "",
+                    "limit": "",
+                    "keyword": ""
+                },
+                "attributes": {
+                    "videos": {
+                        "status": "approved"
+                    },
+                    "photos": {},
+                    "products": {}
+                },
+                "options": {},
+                "extras": {}
+            }
+        ],
+        "productBlock": {
+            "match": "all",
+            "recommended": false,
+            "attributes": {}
+        }
+    },
+    "transcripts": null,
+    "dynamicChannelParams": []
+}

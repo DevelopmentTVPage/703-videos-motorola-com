@@ -1,0 +1,106 @@
+{
+    "title": "All Day Battery",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \\",
+    "referenceId": "775b2b341ebe97a3084ed9fa721f4631",
+    "date_created": "1557441843",
+    "date_modified": "1562355631",
+    "tags": "",
+    "sourceId": "6",
+    "status": "approved",
+    "visibility": "1",
+    "user_id": "214444",
+    "id": "211158800",
+    "loginId": "1759312",
+    "entityType": "1",
+    "titleTextEncoded": "all-day-battery-1080x1080",
+    "category": "",
+    "tvp_profiles": "",
+    "tvp_profiles_manual": "",
+    "tvp_profiles_maxscore": "",
+    "tvp_enhanced_search": "",
+    "tvp_enhanced_anti": "",
+    "tvp_enhanced_brand": "",
+    "tvp_enhanced_video_images": "",
+    "tvp_enhanced_transcript": "",
+    "VIDEO_LENGTH": "SHORT",
+    "duration": 9,
+    "settings": "",
+    "asset": {
+        "user": {
+            "firstName": "",
+            "lastName": "",
+            "emailAddress": ""
+        },
+        "videoMeta": {
+            "duration": 9,
+            "width": 1080,
+            "height": 1080
+        },
+        "mediaDuration": 9,
+        "prettyDuration": "00:00:09",
+        "selectableThumbnails": [
+            "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00005.jpg",
+            "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00004.jpg",
+            "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00003.jpg",
+            "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00002.jpg",
+            "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00001.jpg"
+        ],
+        "automaticThumbnailsPattern": "1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-{count}",
+        "thumbnails": {
+            "256": "\/\/v.tvpage.com\/1759312\/211158800\/thumbnail\/image-thumbnail-256-0d94ac5ef2cb62ec2bac39b016eeba06.jpg",
+            "480": "\/\/v.tvpage.com\/1759312\/211158800\/thumbnail\/image-thumbnail-480-d68875b917199906e148e39f6aaf5d99.jpg",
+            "640": "\/\/v.tvpage.com\/1759312\/211158800\/thumbnail\/image-thumbnail-640-4e936d2ef2a5eebc467fed42dfee81ac.jpg"
+        },
+        "selectedThumbnailUrl": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/thumb-775b2b341ebe97a3084ed9fa721f4631-00004.jpg",
+        "thumbnailUrl": "\/\/v.tvpage.com\/1759312\/211158800\/thumbnail\/image-thumbnail-640-4e936d2ef2a5eebc467fed42dfee81ac.jpg",
+        "type": "mp4",
+        "dashUrl": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/media.mpd",
+        "hlsUrl": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/media.m3u8",
+        "uploadAsset": false,
+        "quality": "",
+        "sources": [
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/1080p_media.mp4",
+                "quality": "1080p",
+                "mime": "video\/mp4",
+                "width": 1080,
+                "height": 1080
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/720p_media.mp4",
+                "quality": "720p",
+                "mime": "video\/mp4",
+                "width": 720,
+                "height": 720
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/480p_media.mp4",
+                "quality": "480p",
+                "mime": "video\/mp4",
+                "width": 480,
+                "height": 480
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/360p_media.mp4",
+                "quality": "360p",
+                "mime": "video\/mp4",
+                "width": 360,
+                "height": 360
+            },
+            {
+                "file": "\/\/v.tvpage.com\/1759312\/211158800\/2f4f8\/240p_media.mp4",
+                "quality": "240p",
+                "mime": "video\/mp4",
+                "width": 240,
+                "height": 240
+            }
+        ]
+    },
+    "transcripts": "",
+    "views": 30,
+    "engagement_score": "",
+    "conversion_score": "",
+    "CVV_VI": "",
+    "metrics_statistics": "",
+    "author": ""
+}

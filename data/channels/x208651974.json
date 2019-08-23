@@ -1,0 +1,49 @@
+{
+    "title": "Most Popular",
+    "description": null,
+    "referenceId": null,
+    "date_created": "1555009881",
+    "date_modified": "1559175513",
+    "tags": null,
+    "sourceId": null,
+    "status": "pending",
+    "visibility": "1",
+    "id": "208651974",
+    "loginId": "1759312",
+    "entityType": "5",
+    "titleTextEncoded": "most-popular",
+    "category": null,
+    "duration": null,
+    "settings": {
+        "canvasImage": "default_canvas3.jpg",
+        "colorClass": "light",
+        "canvasType": "gallery",
+        "blocks": [
+            {
+                "add": "assets",
+                "conditions": {
+                    "order": "engagement_score",
+                    "lastNDays": "",
+                    "limit": "",
+                    "keyword": ""
+                },
+                "attributes": {
+                    "videos": {
+                        "status": "approved"
+                    },
+                    "photos": {},
+                    "products": {}
+                },
+                "options": {},
+                "extras": {}
+            }
+        ],
+        "productBlock": {
+            "match": "all",
+            "recommended": false,
+            "attributes": {}
+        }
+    },
+    "transcripts": null,
+    "dynamicChannelParams": []
+}
