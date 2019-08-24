@@ -19,7 +19,7 @@
     TVSite.isChannelPage = locatedIn === "channel" ? true : false;
     TVSite.isPlayerPage = locatedIn === "channelVideo" ? true : false;
     TVSite.isSearchPage = locatedIn === "search" ? true : false;
-    TVSite.isVideoPage = locatedIn === "video" ? true : false;
+    TVSite.isVideoPage = (locatedIn === "video") || (locatedIn === "photo");
     TVSite.channelId = {{ .Params.channelid }};
     if(TVSite.isHomePage){
         TVSite.channelId = {{ ($.Scratch.Get "settings").homechannelid }};

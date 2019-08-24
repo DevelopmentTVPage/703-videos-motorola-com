@@ -16,6 +16,7 @@ import ClampLines from '../libs/react-clamp-lines';
 
 import store from "../store";
 import * as actionType from "../actions";
+import scrollToComponent from "react-scroll-to-component";
 
 const {video} = TVSite.channelVideosData;
 const {products} = TVSiteFilter;
@@ -33,7 +34,8 @@ class Video extends Component {
             isMobile: Common.isMobile,
             lastPage: false,
             loading: false,
-            openMenu: false
+            openMenu: false,
+            currentVideo:video
         };
         this.loadProducts = this.loadProducts.bind(this);
         this.loadSkuVideos = this.loadSkuVideos.bind(this);
@@ -56,6 +58,11 @@ class Video extends Component {
                     openMenu: false
                 });
             }
+        }else if (storeState.event === actionType.VIDEO) {
+            this.setState({
+                currentVideo: storeState.video
+            });
+            this.loadProducts(storeState.video.id);
         }
     }
 
@@ -173,7 +180,7 @@ class Video extends Component {
     }
 
     render() {
-        let {products, loading, hasProducts, isMobile, skuVideos, lastPage, openMenu, typeVideos} = this.state;
+        let {products,currentVideo, loading, hasProducts, isMobile, skuVideos, lastPage, openMenu, typeVideos} = this.state;
         let playerClass = hasProducts ? "col-md-8" : "col-md-12";
         return (
             <div className="document-body">
@@ -181,11 +188,11 @@ class Video extends Component {
                     <div className="row">
                         <div className="col-md-12 padding-0 z-index-2 side-menu video">
                             <SideMenu compact/>
-                            {(video && !isMobile) &&
+                            {(currentVideo && !isMobile) &&
                             <h1 className="tvp-player-video-title col-xs-12 col-md-12">
                                 Now Playing
                                 <Dotdotdot clamp={2}>
-                                    {video && <span className="tvp-player-video-title-text">{video.title}</span>}
+                                    {currentVideo && <span className="tvp-player-video-title-text">{currentVideo.title}</span>}
                                 </Dotdotdot>
                             </h1>
                             }
@@ -196,15 +203,15 @@ class Video extends Component {
                                     {video &&
                                     <Player playerClassName={playerClass} video={video}/>
                                     }
-                                    {(video && isMobile) &&
+                                    {(currentVideo && isMobile) &&
                                     <div className="tvp-player-metadata col-md-12">
                                         <div className="col-md-12">
                                             <span className="tvp-video-item-meta-author">
-                                                {video.asset.author || "Motorola"}
+                                                {currentVideo.asset.author || "Motorola"}
                                             </span>
                                             <span>|</span>
                                             <span className="tvp-video-item-meta-date">
-                                                {Common.getPostedDate(video.date_created)}
+                                                {Common.getPostedDate(currentVideo.date_created)}
                                             </span>
                                         </div>
                                         <ClampLines className="tvp-video-description col-md-12"
@@ -212,14 +219,14 @@ class Video extends Component {
                                                     ellipsis="..."
                                                     buttons={false}
                                                     id="tvp-video-description"
-                                                    text={Common.linkify(video.description || '')}/>
+                                                    text={Common.linkify(currentVideo.description || '')}/>
                                     </div>
                                     }
                                     {(hasProducts && (products && products.length)) ?
                                         <Products products={products}/> : null
                                     }
-                                    {(!loading && video) &&
-                                    <Socials hasProducts={hasProducts} video={video}/>
+                                    {(!loading && currentVideo) &&
+                                    <Socials hasProducts={hasProducts} video={currentVideo}/>
                                     }
                                     {typeVideos &&
                                     <div className="col-md-12 grid-videos padding-20">
@@ -236,7 +243,7 @@ class Video extends Component {
                                     <div className="col-md-12 grid-videos padding-20">
                                         <span>Related Videos</span>
                                         {
-                                            <Grid videos={Common.rowerize(skuVideos, null, false)}/>
+                                            <Grid videos={skuVideos} currentVideo={parseInt(video.id)}/>
                                         }
                                     </div>
                                     }

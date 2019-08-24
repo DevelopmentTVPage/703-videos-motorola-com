@@ -18,7 +18,20 @@
         "allContent": 215887637,
         "player": {
             "playback": {
-                "autoplay": true
+                "autoplay": true,
+                "autonext": true
+            }
+        },
+        "hub": {
+            "sharing": {
+                "enabled": false,
+                "networks": [
+                    "facebook",
+                    "twitter",
+                    "pinterest",
+                    "email"
+                ],
+                "domain": "https:\/\/videos.motorola.com"
             }
         }
     },
