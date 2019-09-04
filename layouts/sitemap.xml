@@ -1,0 +1,33 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    {{- range .Data.Pages -}}
+        {{- if in (slice "channel" "video") .Layout -}}
+            <url>
+                <loc>{{- .Permalink -}}</loc>
+                {{- if in (slice "channelVideo" "video") .Layout -}}
+                    {{- with (index $.Site.Data.videos (printf "x%s" .Params.videoid)) -}}
+
+                        {{- if and (isset . "asset") (isset .asset "thumbnailUrl") -}}
+                            {{- $thumbnailUrl := .asset.thumbnailUrl -}}
+                            {{- if and (gt (len $thumbnailUrl) 0) (ne $thumbnailUrl "null") (ne $thumbnailUrl "undefined") (ne $thumbnailUrl "false") -}}
+                                <video:video>
+                                    <video:thumbnail_loc>
+                                        {{- if in $thumbnailUrl "http" -}}
+                                            {{- $thumbnailUrl -}}
+                                        {{- else -}}
+                                            https:{{- $thumbnailUrl -}}
+                                        {{- end -}}
+                                    </video:thumbnail_loc>
+                                    <video:title>{{- .title -}}</video:title>
+                                    <video:description>{{- .description | truncate 2048 -}}</video:description>
+                                    {{- if and (gt .duration 0) (lt .duration 28800) -}}
+                                        <video:duration>{{- .duration -}}</video:duration>
+                                    {{- end -}}
+                                </video:video>
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+            </url>
+        {{- end -}}
+    {{- end -}}
+</urlset>

@@ -1,0 +1,72 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    > img{ //SEO Fix
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);      
+    }
+  }
+}
+.tvp-hidden{
+  display: none;
+  visibility: hidden;
+}
+a.tvp-normal{
+  text-decoration: none !important;
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1281px) { @content; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 1025px) and (max-width: 1280px) { @content; }
+  }
+  @else if $point == tabletPortrait {
+    @media (min-width: 768px) and (max-width: 1024px) { @content; }
+  }
+  @else if $point == tabletLandscape {
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { @content; }
+  }
+  @else if $point == mobileLandscape {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @else if $point == mobilePortrait {
+    @media (min-width: 320px) and (max-width: 480px) { @content; }
+  }
+  @else if $point == smallDevices {
+    @media (max-width: 319px) { @content; }
+  }
+}
+
+@mixin mobile{
+  @include breakpoint(mobileLandscape){ @content; }
+  @include breakpoint(mobilePortrait){ @content; }
+}
+
+@mixin tablet{
+  @include breakpoint(tabletLandscape){ @content; }
+  @include breakpoint(tabletPortrait){ @content; }
+}
+
+@mixin dTop{
+  @include breakpoint(desktop){ @content; }
+  @include breakpoint(laptop){ @content; }
+}

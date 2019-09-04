@@ -1,0 +1,19 @@
+{{- if or (eq .Layout "home") (eq .Layout "search") (eq .Layout "video") (eq .Layout "channel") -}}
+    {{- $channel := index $.Site.Data.channels (printf "x%s" ($.Scratch.Get "settings").homechannelid) -}}
+    {{- $page := index $.Site.Data.channelVideos (printf "x%s_page_0" $channel.id) -}}
+    {{- $.Scratch.Set "videos" slice -}}
+    {{- range $page.data -}}
+        {{- $currentVideo := index $.Site.Data.videos (printf "x%s" .id) -}}
+        {{- $asset := $currentVideo.asset -}}
+        {{- $videoToAdd := dict "id" $currentVideo.id "title" $currentVideo.title "description" $currentVideo.description "titleTextEncoded" $currentVideo.titleTextEncoded "asset" $asset "date_created" $currentVideo.date_created -}}
+        {{- $.Scratch.Add "videos" $videoToAdd -}}
+    {{- end -}}
+    <script type="text/javascript">
+        TVSite.channelVideosData = {{ $channel | jsonify | safeJS }};
+        TVSite.channelsGallery = [];
+        TVSite.channelVideosData.videos = {{- ($.Scratch.Get "videos") | jsonify | safeJS -}};
+    </script>
+{{- end -}}
+{{- if or (eq .Layout "video") (eq .Layout "channelVideo") (eq .Layout "home") (eq .Layout "channel") -}}
+    <script async type="text/javascript" src="https://cdnjs.tvpage.com/tvplayer/tvp-master.min.js"></script>
+{{- end -}}

@@ -1,0 +1,58 @@
+.player-socials {
+    &-facebook,
+    &-twitter,
+    &-share {
+        margin: 0 5px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    &-container {
+        margin: 7% 0;
+    }
+
+    &-wrapper {
+        float: right;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        font-size: 12px;
+        color: rgba(0,0,0,0.6);
+        & > span {
+            margin-right: 15px;
+        }
+    }
+}
+
+.tooltip-text {
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    right: 0;
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        right: 8px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .player-socials {
+        &-container {
+            margin: 4% 0;
+        }
+    }
+}

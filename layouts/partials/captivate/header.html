@@ -1,0 +1,80 @@
+<noscript class="deferred-styles">
+    <style type="text/css">{{- replaceRE "\n" "" (partial (printf "%s/fonts.html" .Type ) .) | safeCSS -}}</style>
+</noscript>
+
+<style type="text/css">{{- readFile "static/css/bootstrap.css" | safeCSS -}}</style>
+<h1 class="tvp-seo">{{- $.Scratch.Get "siteTitle" -}}</h1>
+{{- $.Scratch.Set "videos" slice -}}
+{{- $loginId := .Site.Params.loginId -}}
+{{- if (eq .Layout "video") -}}
+    {{- $productUrl := printf "https://api.tvpage.com/v1/videos/%s/products?X-login-id=%s" .Params.videoid $loginId -}}
+    {{- $products := getJSON $productUrl -}}
+    {{- $product := index $products 0 | default nil -}}
+
+    {{- if $product -}}
+        <script>
+            TVSiteFilter = {};
+            TVSiteFilter.referenceId = "{{ $product.referenceId }}";
+            TVSiteFilter.tvp_category = {{ $product.tvp_category }};
+            TVSiteFilter.defaultFilter = "{{ .Params.title }}";
+            TVSiteFilter.products = {{ $products }};
+        </script>
+    {{- else -}}
+        {{- $titleClean := replaceRE "[^a-zA-Z0-9 ]" "" .Title -}}
+        {{- $titleCleanSpace := replaceRE " " "%20" $titleClean -}}
+        {{- $query := querify "s" $titleCleanSpace | safeURL -}}
+        <script>
+            TVSiteFilter = {};
+            TVSiteFilter.defaultFilter = "{{ .Params.title }}";
+        </script>
+    {{- end -}}
+{{- else if eq .Layout "photo" -}}
+    {{- $productUrl := printf "https://api.tvpage.com/v1/videos/%s/products?X-login-id=%s" .Params.photoId $loginId -}}
+    {{- $products := getJSON $productUrl -}}
+    {{- $product := index $products 0 | default nil -}}
+
+    {{- if $product -}}
+        <script>
+            TVSiteFilter = {};
+            TVSiteFilter.referenceId = "{{ $product.referenceId }}";
+            TVSiteFilter.tvp_category = {{ $product.tvp_category }};
+            TVSiteFilter.defaultFilter = "{{ .Params.title }}";
+            TVSiteFilter.products = {{ $products }};
+        </script>
+    {{- else -}}
+        {{- $titleClean := replaceRE "[^a-zA-Z0-9 ]" "" .Title -}}
+        {{- $titleCleanSpace := replaceRE " " "%20" $titleClean -}}
+        {{- $query := querify "s" $titleCleanSpace | safeURL -}}
+        <script>
+            TVSiteFilter = {};
+            TVSiteFilter.defaultFilter = "{{ .Params.title }}";
+        </script>
+    {{- end -}}
+{{- end -}}
+
+<noscript class="deferred-styles">
+    <style>
+        /* <![CDATA[ */
+            @media screen and (min-width:0) and (max-width:767px){#home-features .item-0 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){#home-features .item-0 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:992px) and (max-width:1199px){#home-features .item-0 .field-name-field-home-feature-product-logo img{height:34px!important}}@media screen and (min-width:1200px){#home-features .item-0 .field-name-field-home-feature-product-logo img{height:34px!important}}@media screen and (min-width:0) and (max-width:767px){#home-features .item-1 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){#home-features .item-1 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:992px) and (max-width:1199px){#home-features .item-1 .field-name-field-home-feature-product-logo img{height:48px!important}}@media screen and (min-width:1200px){#home-features .item-1 .field-name-field-home-feature-product-logo img{height:48px!important}}@media screen and (min-width:0) and (max-width:767px){#home-features .item-2 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){#home-features .item-2 .field-name-field-home-feature-product-logo img{height:30px!important}}@media screen and (min-width:992px) and (max-width:1199px){#home-features .item-2 .field-name-field-home-feature-product-logo img{height:36px!important}}@media screen and (min-width:1200px){#home-features .item-2 .field-name-field-home-feature-product-logo img{height:36px!important}}@media screen and (max-width:992px){#block-bean-social-networks{background-color:#2d3c7b}}.tb-megamenu.animate .mega>.mega-dropdown-menu,.tb-megamenu.animate.slide .mega>.mega-dropdown-menu>div{transition-delay:.2s;-webkit-transition-delay:.2s;-ms-transition-delay:.2s;-o-transition-delay:.2s;transition-duration:.4s;-webkit-transition-duration:.4s;-ms-transition-duration:.4s;-o-transition-duration:.4s}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-0 .product-logo img{height:44px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-0 .product-logo img{height:44px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-0 .product-logo img{height:96px!important}}@media screen and (min-width:1200px){.home-carousel .item-0 .product-logo img{height:96px!important}}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-0.product-scnd-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-0.product-scnd-logo img{height:26px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-0.product-scnd-logo img{height:30px!important}}@media screen and (min-width:1200px){.home-carousel .item-0.product-scnd-logo img{height:35px!important}}html:not([data-breakpoint=screen-xs]) .home-carousel .item-0 .views-field-field-carousel-text{color:#fff!important}html[data-breakpoint=screen-xs] .home-carousel .item-0 .views-field-field-carousel-text{color:#fff!important}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-1 .product-logo img{height:40px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-1 .product-logo img{height:40px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-1 .product-logo img{height:84px!important}}@media screen and (min-width:1200px){.home-carousel .item-1 .product-logo img{height:84px!important}}html:not([data-breakpoint=screen-xs]) .home-carousel .item-1 .views-field-field-carousel-text{color:#fff!important}html[data-breakpoint=screen-xs] .home-carousel .item-1 .views-field-field-carousel-text{color:#fff!important}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-2 .product-logo img{height:60px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-2 .product-logo img{height:60px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-2 .product-logo img{height:130px!important}}@media screen and (min-width:1200px){.home-carousel .item-2 .product-logo img{height:130px!important}}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-2.product-scnd-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-2.product-scnd-logo img{height:26px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-2.product-scnd-logo img{height:110px!important}}@media screen and (min-width:1200px){.home-carousel .item-2.product-scnd-logo img{height:110px!important}}html:not([data-breakpoint=screen-xs]) .home-carousel .item-2 .views-field-field-carousel-text{color:#fff!important}html[data-breakpoint=screen-xs] .home-carousel .item-2 .views-field-field-carousel-text{color:#fff!important}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-3 .product-logo img{height:40px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-3 .product-logo img{height:40px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-3 .product-logo img{height:70px!important}}@media screen and (min-width:1200px){.home-carousel .item-3 .product-logo img{height:70px!important}}@media screen and (min-width:0) and (max-width:767px){.home-carousel .item-3.product-scnd-logo img{height:30px!important}}@media screen and (min-width:768px) and (max-width:991px){.home-carousel .item-3.product-scnd-logo img{height:26px!important}}@media screen and (min-width:992px) and (max-width:1199px){.home-carousel .item-3.product-scnd-logo img{height:30px!important}}@media screen and (min-width:1200px){.home-carousel .item-3.product-scnd-logo img{height:35px!important}}html:not([data-breakpoint=screen-xs]) .home-carousel .item-3 .views-field-field-carousel-text{color:#fff!important}html[data-breakpoint=screen-xs] .home-carousel .item-3 .views-field-field-carousel-text{color:#fff!important}@media screen and (max-width:992px){#block-bean-social-networks{background-color:#2d3c7b}}div.footer-wrap.sign-up-area{background-color:#3e8edd;color:#fff}.navbar-header .logo.logo-custom{background-image:url(//www.motorola.com/sites/default/files/library/storage/logos/motomix90.gif)}.node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(1){background-color:#fff;color:#000}html[data-breakpoint=screen-lg] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(1),html[data-breakpoint=screen-md] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(1),html[data-breakpoint=screen-sm] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(1){background-color:#fff;color:#000}.node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(2){background-color:#e2e2e2;color:#000}html[data-breakpoint=screen-lg] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(2),html[data-breakpoint=screen-md] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(2),html[data-breakpoint=screen-sm] .node-homepage #promo-area>.field-collection-container>.field-name-field-hp-promo-area-data>.field-items>.field-item:nth-child(2){background-color:#e2e2e2;color:#000}.field_family_hero-80690{background-color:#fff}html[data-breakpoint=screen-sm] .field_family_hero-80690{background-color:#fff}html[data-breakpoint=screen-lg] .field_family_hero-80690,html[data-breakpoint=screen-md] .field_family_hero-80690{color:#fff!important;background-color:#fff}.field_family_hero-78624{background-color:#fff}html[data-breakpoint=screen-sm] .field_family_hero-78624{background-color:#fff}html[data-breakpoint=screen-lg] .field_family_hero-78624,html[data-breakpoint=screen-md] .field_family_hero-78624{color:#fff!important;background-color:#fff}
+        /* ]]> */
+    </style>
+</noscript>
+
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-default global-nav-menu">
+    <div class="secondary-nav"></div>
+    <div class="container global-nav-container">
+        <div class="navbar-header">
+            <div class="lenovo-logo"
+                 style="position: absolute;top: -30px;left: 30px;transform: rotate(90deg);">
+                <a href="//www.lenovo.com" title="Lenovo" class="at-element-marker">
+                    <img src="//motorola.com/sites/all/themes/custom/motorola_bootstrap/images/lenovo-logo-vertical.svg"
+                         alt="Lenovo"
+                         style="height: auto;width: 30px;">
+                </a>
+            </div>
+            <a class="logo logo-custom navbar-btn center-block text-center" href="//www.motorola.com/us/home"
+               title="Home">
+            </a>
+        </div>
+    </div>
+</header>
