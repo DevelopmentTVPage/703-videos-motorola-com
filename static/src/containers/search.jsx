@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
 import config from "../../../config.json";
-
 import "../../sass/components/_document.scss";
-
 import SideMenu from "../components/SideMenu/SideMenu";
 import Footer from "../components/Footer/Footer";
+
 import Grid from "../components/Grid/Grid";
 import Filters from "../components/Filters/Filters";
 

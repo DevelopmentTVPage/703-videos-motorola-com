@@ -1,0 +1,4 @@
+[build]
+base = ""
+publish = "public"
+command = "hugo --baseURL=https://stage-hub--videos-motorola.netlify.com/us/ --destination=public/us && node rename.js"

@@ -165,6 +165,7 @@ class Common {
             );
         }
         return text.replace(/\n/g, '<br>\n');
+
     }
 
     getById(id) {

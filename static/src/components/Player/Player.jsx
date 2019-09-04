@@ -5,7 +5,8 @@ import Dotdotdot from "react-dotdotdot";
 import Common from "../../utils/common";
 import scrollToComponent from "react-scroll-to-component";
 import * as actionType from "../../actions";
-// import Analytics from "../../libs/analytics";
+import config from "../../../../config.json";
+
 import ClampLines from '../../libs/react-clamp-lines';
 
 import Api from "../../utils/api_calls";
@@ -73,9 +74,11 @@ class Player extends PureComponent {
             api_base_url: TVSite.apiUrl,
             player_version: "3.1.6",
             data: [this.state.video],
+            sharing:config.params.hub.sharing,
             analytics: true,
             overlay: true,
             autoplay: false,
+            autonext:true,
             loginId: TVSite.loginId
         });
     }
@@ -112,7 +115,7 @@ class Player extends PureComponent {
 
     render() {
         const {video, isMobile, playerClassName} = this.state;
-        
+
         return (
             <div className={playerClassName} ref="tvpageplayer">
                 <div className="tvp-player-products-container">

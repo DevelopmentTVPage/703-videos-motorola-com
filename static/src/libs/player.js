@@ -181,7 +181,7 @@ function Player(el, options, startWith) {
         if (!initial) {
             this.current = this.getCurrentIndex(a.assetId);
         }
-        
+
         if (willCue && !immediate) {
             this.instance.cueVideo(a);
         } else {
@@ -252,6 +252,7 @@ function Player(el, options, startWith) {
 
         that.current = that.getCurrentIndex(startWith);
         var assetToPlay = that.assets[that.current];
+
         that.play(assetToPlay,null,true);
 
         if (that.onPlayerReady){
@@ -274,13 +275,7 @@ function Player(el, options, startWith) {
                 video_event : e
             });
         }
-        if ('tvp:media:videoended' === e && TVSite.isVideoPage) {
-            that.current++;
-            if (!that.assets[that.current]) {
-                that.current = 0;
-            }
-            that.play(that.assets[that.current], true);
-        }
+
         if ('tvp:media:videoplaying' === e && that.onNext){
             that.onNext(that.assets[that.current]);
         }
@@ -299,7 +294,6 @@ function Player(el, options, startWith) {
             if ( !isset(window,'TVPage') && (++checks < 200) ) {
                 libsReady();
             } else {
-
                 var playerOptions = {
                     techOrder: that.techOrder,
                     mediaProviders: that.mediaProviders,

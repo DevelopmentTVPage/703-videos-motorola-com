@@ -1,16 +1,64 @@
 {
-    "title": "Stage HUB",
+    "title": "Motorola US TV Pages",
     "baseURL": "https:\/\/videos.motorola.com\/us",
     "languageCode": "en-us",
     "theme": "tvpage",
     "defaultContentLanguage": "none",
     "disablePathToLower": true,
     "enableRobotsTXT": true,
-    "galleryChannelIds": "208654469,208654670,208654494,208654680,208651961,208654516,208651974,208651975",
+    "galleryChannelIds": "208651961,208651974,208651975,208654469,208654494,208654516,208654535,208654680,208654670",
     "params": {
         "loginId": "1759312",
         "subfolder": "\/us",
         "firstpartycookies": true,
-        "cookiedomain": "motorola.com"
-    }
+        "cookiedomain": "motorola.com",
+        "homeFeaturedChannelID": 208651961,
+        "mostPopular": 208651974,
+        "mostRecent": 208651975,
+        "allContent": 215887637,
+        "player": {
+            "playback": {
+                "autoplay": true,
+                "autonext": true
+            }
+        },
+        "hub": {
+            "sharing": {
+                "enabled": false,
+                "networks": [
+                    "facebook",
+                    "twitter",
+                    "pinterest",
+                    "email"
+                ],
+                "domain": "https:\/\/videos.motorola.com"
+            }
+        }
+    },
+    "menu": [
+        {
+            "label": "Moto Events",
+            "id": 208654469
+        },
+        {
+            "label": "Product Reviews",
+            "id": 208654494
+        },
+        {
+            "label": "How To's",
+            "id": 208654516
+        },
+        {
+            "label": "Camera Comparisons",
+            "id": 208654535
+        },
+        {
+            "label": "Phone Comparisons",
+            "id": 208654670
+        },
+        {
+            "label": "Tv Commercials",
+            "id": 208654680
+        }
+    ]
 }
