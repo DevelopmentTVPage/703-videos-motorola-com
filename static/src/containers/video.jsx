@@ -168,7 +168,7 @@ class Video extends Component {
         Api.videos(mostRecent, ++page, query, 8).done((data) => {
             store.dispatch({
                 type: actionType.LOAD_MORE_VIDEOS,
-                load_more_videos: Common.rowerize(data, null, false)
+                load_more_videos: data
             });
             that.setState({
                 loading: false,

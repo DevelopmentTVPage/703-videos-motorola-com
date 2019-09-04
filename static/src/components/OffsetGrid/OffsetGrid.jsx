@@ -50,7 +50,7 @@ export default class OffsetGrid extends Component {
                     that.setState({
                         videos: res,
                         hasVideos: true,
-                        lastPage: res.length <= 17
+                        lastPage: res.length < 17
                     });
                 } else {
                     that.setState({
@@ -70,7 +70,7 @@ export default class OffsetGrid extends Component {
                 that.setState({
                     videos: res,
                     hasVideos: true,
-                    lastPage: res.length <= 17
+                    lastPage: res.length < 17
                 });
                 store.dispatch({
                     type: actionType.VIDEO_COUNT,
@@ -119,6 +119,7 @@ export default class OffsetGrid extends Component {
                 };
             }
             that.setState(newState);
+            console.log(that.state);
         });
     }
 
@@ -163,7 +164,7 @@ export default class OffsetGrid extends Component {
                 :
                 <h3 className="text-center col-md-12">LOADING...</h3>
             }
-            {(loadMoreVideos && !lastPage) && <Grid videos={Common.rowerize(loadMoreVideos, null, false)}/>}
+            {loadMoreVideos && <Grid videos={loadMoreVideos}/>}
             {(hasVideos && !lastPage) &&
             <button disabled={lastPage} className={(!lastPage ? "enabled" : "disabled") + " tvp-loadMore-btn"}
                     onClick={this.loadMore.bind(this)}>{loading ? "Loading..." : "View More"}</button>

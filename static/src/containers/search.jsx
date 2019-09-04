@@ -71,7 +71,7 @@ class Search extends Component {
         this.setState({
             loading: true
         });
-        Api.suggestResults(page++, query, 8).done((data) => {
+        Api.suggestResults(page++, query, 16).done((data) => {
             let newState = {};
             if (data && data.result.length) {
                 newState = {
@@ -100,6 +100,8 @@ class Search extends Component {
 
     render() {
         const {relatedVideos, searchTerm, loaded} = this.state;
+        console.log(relatedVideos);
+        
         return (
             <div className="document-body search-page">
                 <div className="container-fluid">
@@ -127,7 +129,7 @@ class Search extends Component {
                                 {relatedVideos &&
                                 <div className="col-md-12">
                                     {
-                                        <Grid videos={Common.rowerize(relatedVideos, null, false)}/>
+                                        <Grid videos={relatedVideos}/>
                                     }
                                 </div>
                                 }

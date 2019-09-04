@@ -18,16 +18,16 @@ export default class GridItem extends Component {
 
     render() {
         let {itemClassName, item, offset} = this.props;
-        const parsedData = JSON.parse(item.data);
+        const parsedData = !Common.isJson(item.data) ? item.data : JSON.parse(item.data);
+        
         const isPhoto = Common.isPhoto(item);
         item.titleTextEncoded = item.titleTextEncoded ? item.titleTextEncoded : parsedData.titleTextEncoded;
         item.asset = item.asset ? item.asset : parsedData.asset;
         item.duration = item.duration ? item.duration : parsedData.duration;
         item.url = Common.getVideoPageUrl(item);
 
-        const vidData = !Common.isJson(item.data) ? item.data : JSON.parse(item.data),
-            thumbsArr = vidData.asset.thumbnails,
-            thumbnailUrl = offset ? thumbsArr[Object.keys(thumbsArr)[Object.keys(thumbsArr).length - 1]] : vidData.asset.thumbnailUrl;
+        const thumbsArr = parsedData.asset.thumbnails,
+            thumbnailUrl = offset ? thumbsArr[Object.keys(thumbsArr)[Object.keys(thumbsArr).length - 1]] : parsedData.asset.thumbnailUrl;
 
         return (<div onClick={this.constructor.handleClick.bind(this)} data-item-url={item.url}
                      className={itemClassName + " tvp-video-item"}>

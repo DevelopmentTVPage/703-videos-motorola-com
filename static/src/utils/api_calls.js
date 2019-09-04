@@ -65,12 +65,12 @@ export class Api {
         return this.commonClean(url, request.Data);
     }
 
-    suggestResults(page, query) {
+    suggestResults(page, query,number) {
         const url = TVSite.apiUrl + "videos/search/suggest/results";
         const request = new Request();
         request.addProperty("p", page);
         request.addProperty("s", query);
-        request.addProperty("n", 20);
+        request.addProperty("n", number|| 20);
         request.addProperty("status", "approved");
         return this.commonClean(url, request.Data);
     }

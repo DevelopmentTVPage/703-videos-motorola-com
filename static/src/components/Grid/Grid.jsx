@@ -26,10 +26,11 @@ export default class Grid extends Component {
         const storeState = store.getState();
         if (storeState.event === actionType.LOAD_MORE_VIDEOS) {
             let {videos} = this.state;
-
             this.setState({
                 videos: videos.concat(storeState.load_more_videos)
             });
+
+            
         } else if (storeState.event === actionType.VIDEO_EVENT) {
             if (storeState.video_event !== 'tvp:media:videoended') return;
             let index = 0;
