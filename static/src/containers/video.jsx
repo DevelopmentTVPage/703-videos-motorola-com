@@ -95,10 +95,9 @@ class Video extends Component {
         that.setState({
             loading: true
         });
-
         Api.products(videoId).done(function(data) {
             let newState = {};
-            if (!data.length) {
+            if (Common.isEmpty(data.matches)) {
                 newState = {
                     loading: false,
                     hasProducts: false,
@@ -108,13 +107,14 @@ class Video extends Component {
             else {
                 newState = {
                     loading: false,
-                    query: data[0].brand,
-                    products: data,
+                    query: data.matches[0].entity.data.brand,
+                    products: data.matches,
                     hasProducts: true,
-                    lastPage: data.length <= 16
+                    lastPage: data.matches.length <= 16
                 };
             }
             that.setState(newState);
+
         });
     }
 

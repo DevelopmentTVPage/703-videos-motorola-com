@@ -3,8 +3,9 @@ class Common {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-    createProductStructureData(product) {
-        let schema = document.createElement("script");
+    createProductStructureData(asset) {
+        const product = asset.entity.data;
+        const schema = document.createElement("script");
         let data = [];
         const hasPrice = !!product.price;
 
@@ -15,22 +16,22 @@ class Common {
         let schemaStructure = {
             "@context": "http://schema.org/",
             "@type": "Product",
-            "name": product.title,
+            "name": asset.entity.title,
             "image": [
-                product.data.imageUrl
+                product.imageUrl
             ],
-            "description": product.description || "No Description",
-            "mpn": product.referenceId || product.mpn,
-            "sku": product.referenceId,
-            "category": product.data.category,
-            "brand": product.data.brand,
+            "description": asset.entity.description || "No Description",
+            "mpn": asset.entity.referenceId || product.mpn,
+            "sku": asset.entity.referenceId,
+            "category": product.category,
+            "brand": product.brand,
             "offers": {
                 "@type": "AggregateOffer",
                 "price": price,
                 "lowPrice": price,
                 "highPrice": price,
                 "priceCurrency": "USD",
-                "url": product.data.linkUrl,
+                "url": product.linkUrl,
                 "availability": price === 0 ? "http://schema.org/OutOfStock" : "http://schema.org/InStock"
             }
         };

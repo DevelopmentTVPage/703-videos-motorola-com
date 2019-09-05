@@ -86,9 +86,8 @@ export class Api {
         });
     }
 
-    products(videoId) {
-        const url = TVSite.apiUrl + "videos/" + videoId + "/products";
-        return this.commonRequest(url, null, null);
+    products(entityId){
+        return $.get(TVSite.newApiUrl+"/entity/"+TVSite.loginId+"/entity/"+entityId+"/products");
     }
 
     videoInfo(videoId) {

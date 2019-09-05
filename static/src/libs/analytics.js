@@ -4,8 +4,8 @@ export class Analytics{
   }
   productImpresion(product){
     var data = {
-      vd : product.entityIdParent,
-      ct : product.id,
+      vd : TVSite.channelVideosData.video.id,
+      ct : product.product_id,
       li : TVSite.loginId,
       pg : TVSite.channelId
     };
@@ -13,8 +13,8 @@ export class Analytics{
   }
   productClick(product){
     var data = {
-      vd : product.entityIdParent,
-      ct : product.id,
+      vd : TVSite.channelVideosData.video.id,
+      ct : product.product_id,
       li : TVSite.loginId,
       pg : TVSite.channelId
     };

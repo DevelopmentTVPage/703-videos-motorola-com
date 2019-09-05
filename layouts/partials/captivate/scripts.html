@@ -12,6 +12,7 @@
     var apiVersion = {{ getenv "HUGO_API_URL" }};
     TVSite.loginId = {{ .Site.Params.loginId }};
     TVSite.apiUrl = apiVersion || "https:\\/\\/stage.tvpage.com/api/";
+    TVSite.newApiUrl = "https:\/\/stage.tvpage.com\/v2\/api";
     TVSite.baseUrl = {{- $baseUrl -}};
     //checking page type
     var locatedIn = {{- .Layout -}};

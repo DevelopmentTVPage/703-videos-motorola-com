@@ -16,23 +16,23 @@ export default class Products extends Component {
         Common.createProductStructureData(element);
         Analytics.productImpresion(element);
         const elStyle = {
-            backgroundImage: `url(${element.imageUrl})`
+            backgroundImage: `url(${element.entity.data.imageUrl})`
         };
 
-        let learnMoreLink = element.linkUrl;
+        let learnMoreLink = element.entity.data.linkUrl;
 
         if(learnMoreLink.indexOf("#") > 1){
-            learnMoreLink = element.linkUrl.split("#").shift();
+            learnMoreLink = element.entity.data.linkUrl.split("#").shift();
         }
-
+        
         return (<div className="product-item" key={index}>
             <div className="row">
                 <div className="col-md-6 product-item-image-container">
                     <div className="product-item-image" style={elStyle}></div>
-                    <div className="product-item-title">{element.title}</div>
+                    <div className="product-item-title">{element.entity.title}</div>
                    <div className="product-item-cta-wrapper">
-                       <a onClick={() => Analytics.productClick(element)} href={element.linkUrl} target="_blank" className="product-item-cta">
-                           <div>{element.actionText || "Buy Now"}</div>
+                       <a onClick={() => Analytics.productClick(element)} href={element.entity.data.linkUrl} target="_blank" className="product-item-cta">
+                           <div>{element.entity.data.actionText || "Buy Now"}</div>
                        </a>
                        <a className="product-item-learn-more" href={learnMoreLink}>Learn More</a>
                    </div>
@@ -41,7 +41,7 @@ export default class Products extends Component {
                 <div className="col-md-6 product-item-meta-container">
                     <p className="product-item-meta-headline">specifications</p>
                     <div className="product-item-meta-os">OS
-                        <div>{element.os || "N/A"}</div>
+                        <div>{element.entity.data.os || "N/A"}</div>
                     </div>
                     <div className="product-item-meta-processor">processor
                         <div><ClampLines
@@ -49,16 +49,16 @@ export default class Products extends Component {
                             ellipsis="..."
                             buttons={false}
                             id="product-item-meta-processor"
-                            text={element.processor || "N/A"}/></div>
+                            text={element.entity.data.processor || "N/A"}/></div>
                     </div>
                     <div className="product-item-meta-ram">memory (RAM)
-                        <div>{element.memory || "N/A"}</div>
+                        <div>{element.entity.data.memory || "N/A"}</div>
                     </div>
                     <div className="product-item-meta-internal-storage">internal storage
-                        <div>{element.int_storage || "N/A"}</div>
+                        <div>{element.entity.data.int_storage || "N/A"}</div>
                     </div>
                     <div className="product-item-meta-expandable-storage">expandable storage
-                        <div>{element.exp_storage || "N/A"}</div>
+                        <div>{element.entity.data.exp_storage || "N/A"}</div>
                     </div>
                 </div>
             </div>
