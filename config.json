@@ -18,8 +18,8 @@
         "allContent": 215887637,
         "player": {
             "playback": {
-                "autoplay": true,
-                "autonext": true
+                "autoplay": false,
+                "autonext": false
             }
         },
         "hub": {

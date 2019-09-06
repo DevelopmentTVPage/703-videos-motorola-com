@@ -24,7 +24,7 @@ export default class Products extends Component {
         if(learnMoreLink.indexOf("#") > 1){
             learnMoreLink = element.entity.data.linkUrl.split("#").shift();
         }
-        
+
         return (<div className="product-item" key={index}>
             <div className="row">
                 <div className="col-md-6 product-item-image-container">

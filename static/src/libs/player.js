@@ -111,6 +111,7 @@ function Player(el, options, startWith) {
         asset.assetId = obj.id;
         asset.assetTitle = obj.title;
         asset.loginId = obj.loginId;
+        asset.entityType = obj.entityType;
 
         if (isset(obj,'events') && obj.events.length) {
             asset.analyticsLogUrl = obj.analytics;
@@ -182,8 +183,10 @@ function Player(el, options, startWith) {
             this.current = this.getCurrentIndex(a.assetId);
         }
 
-        if (willCue && !immediate) {
+        if (willCue) {
             this.instance.cueVideo(a);
+            if (that.assets[that.current].entityType === "7" && !initial)
+                that.instance.photoPlayer.onPauseButtonClick();
         } else {
             this.instance.loadVideo(a);
         }
@@ -268,12 +271,18 @@ function Player(el, options, startWith) {
 
     }
     this.onStateChange = function(e){
-
-        if('tvp:media:videoended' === e){
+        if('tvp:media:videoended' === e && that.autonext){
             store.dispatch({
                 type: actionType.VIDEO_EVENT,
                 video_event : e
             });
+        }else if ('tvp:media:videoended' === e){
+            that.current++;
+            if (!that.assets[that.current]) {
+                that.current = 0;
+            }
+
+            that.play(that.assets[that.current], true);
         }
 
         if ('tvp:media:videoplaying' === e && that.onNext){

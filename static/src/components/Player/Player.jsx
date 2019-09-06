@@ -77,8 +77,8 @@ class Player extends PureComponent {
             sharing:config.params.hub.sharing,
             analytics: true,
             overlay: true,
-            autoplay: false,
-            autonext:true,
+            autoplay: config.params.player.playback.autoplay,
+            autonext: config.params.player.playback.autonext,
             loginId: TVSite.loginId
         });
     }
